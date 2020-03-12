@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
 import { FormsModule } from '@angular/forms';
+import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
 
 // Modulo secundarios
 import { SharedModule } from '../shared/shared.module';
@@ -15,7 +16,8 @@ import { PagesRoutingModule } from './pages-routing.module';
   declarations: [PagesComponent,
     DashboardComponent,
     ProgressComponent,
-    Graficas1Component
+    Graficas1Component,
+    IncrementadorComponent
   ],
   imports: [
     CommonModule,
