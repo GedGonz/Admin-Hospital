@@ -17,12 +17,12 @@ export class IncrementadorComponent implements OnInit {
 
   constructor() {
    // console.log('Leyenda: ', this.leyenda);
-    console.log('Progreso: ', this.progreso);
+   // console.log('Progreso: ', this.progreso);
   }
 
   ngOnInit() {
   // console.log('Leyenda: ', this.leyenda);
-    console.log('Progreso: ', this.progreso);
+  // console.log('Progreso: ', this.progreso);
   }
 
   cambiarValor(valor: number) {
@@ -40,4 +40,23 @@ export class IncrementadorComponent implements OnInit {
     this.cambioValor.emit(this.progreso);
   }
 
+
+  onChanges(newValue: number) {
+
+    let elemHtml: any = document.getElementsByName('progreso')[0];
+
+    if(newValue >= 100) {
+    this.progreso = 100;
+    } else if (newValue <= 0) {
+      this.progreso = 0;
+    } else {
+      this.progreso = newValue;
+    }
+
+    elemHtml.value = this.progreso;
+
+    this.cambioValor.emit(this.progreso);
+    console.log(newValue);
+
+  }
 }
